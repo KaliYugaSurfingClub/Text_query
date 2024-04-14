@@ -2,9 +2,7 @@
 
 Result_query::Result_query
 (string entry, const shared_ptr<vector<string>> &text, const shared_ptr<std::set<size_t>> &lines)
-: entry_report(std::move(entry)), text_(text), lines_(lines) {
-    std::cout << "create full " << this << std::endl;
-}
+: entry_report(std::move(entry)), text_(text), lines_(lines) {}
 
 shared_ptr<vector<string>> Result_query::text() {
     return text_;

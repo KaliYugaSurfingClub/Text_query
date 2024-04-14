@@ -18,11 +18,9 @@ Text_query::Text_query(std::istream &file) : text_(make_shared<vector<string>>()
 }
 
 Result_query Text_query::query(const string &word) const {
-    static shared_ptr<std::set<size_t>> nodata;
-
     auto iter = words_matched_lines_.find(word);
     if (iter == words_matched_lines_.end()) {
-        return {word, text_, nodata};
+        return {word, text_, make_shared<std::set<size_t>>()};
     }
 
     return {word, text_, iter->second};

@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Query q = ~(Query("Hello") | Query("I"));
+    Query q = ~Query("1") | Query("132");
     ifstream file("../text.txt");
     Text_query tq(file);
     auto u = q.eval(tq);
