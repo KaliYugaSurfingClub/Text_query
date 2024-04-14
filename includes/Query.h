@@ -15,6 +15,7 @@ private:
     shared_ptr<Query_base> query_;
 };
 
+std::ostream &operator<<(std::ostream &os, const Query &query);
 Query operator~(const Query &query);
 Query operator&(const Query &left, const Query &right);
 Query operator|(const Query &left, const Query &right);

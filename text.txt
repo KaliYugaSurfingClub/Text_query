@@ -1,4 +1,4 @@
-Hello is a super programmer
-Hello my name is sasha
-I like programming
-Hello I am sasha
+Hello is a super programmer 1
+Hello my name is sasha 1
+I like programming 1
+Hello I am sasha 1

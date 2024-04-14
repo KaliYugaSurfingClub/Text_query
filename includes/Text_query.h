@@ -11,7 +11,6 @@ public:
     Text_query() = default;
     explicit Text_query(std::istream &file);
 
-    //todo пусть возвращает просто сет
     Result_query query(const string &word) const;
 
 private:

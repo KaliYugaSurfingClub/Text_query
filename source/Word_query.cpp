@@ -3,8 +3,7 @@
 Word_query::Word_query(string word) : word_(std::move(word)) {}
 
 Result_query Word_query::eval(const Text_query &text) const {
-    Result_query res = text.query(word_);
-    return res;
+    return text.query(word_);
 }
 
 string Word_query::rep() const {

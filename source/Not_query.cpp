@@ -2,8 +2,7 @@
 #include "Word_query.h"
 
 string Not_query::rep() const {
-    string res = string("~(") + query_.rep() + ")";
-    return res;
+    return string("~(") + query_.rep() + ")";
 }
 
 Result_query Not_query::eval(const Text_query &text) const {
@@ -20,6 +19,5 @@ Result_query Not_query::eval(const Text_query &text) const {
 }
 
 Query operator~(const Query &query) {
-    auto res = Query(shared_ptr<Query_base>(new Not_query(query)));
-    return res;
+    return Query(shared_ptr<Query_base>(new Not_query(query)));
 }
