@@ -1,5 +1,7 @@
 #include "And_query.h"
 
+And_query::And_query(const Query &left, const Query &right) : Binary_query(left, right) {}
+
 string And_query::rep() const {
     return string("(") + left_.rep() + " & " + right_.rep() + ")";
 }
@@ -21,6 +23,5 @@ Result_query And_query::eval(const Text_query &text) const {
 }
 
 Query operator&(const Query &left, const Query &right) {
-    return Query(shared_ptr<Query_base>(new And_query(Query(__cxx11::basic_string()), Query(__cxx11::basic_string()),
-                                                      left, right)));
+    return Query(shared_ptr<Query_base>(new And_query(left, right)));
 }

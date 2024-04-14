@@ -1,5 +1,7 @@
 #include "Or_query.h"
 
+Or_query::Or_query(const Query &left, const Query &right) : Binary_query(left, right) {}
+
 string Or_query::rep() const {
     return string("(") + left_.rep() + " | " + right_.rep() + ")";
 }
